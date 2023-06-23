@@ -1,0 +1,74 @@
+{
+  "description": "The data model used in Grafana, namely the data frame, is a columnar-oriented table structure that unifies both time series and table query results.\nEach column within this structure is called a field. A field can represent a single time series or table column.\nField options allow you to change how the data is displayed in your visualizations.",
+  "type": "object",
+  "properties": {
+    "displayName": {
+      "description": "The display value for this field.  This supports template variables blank is auto",
+      "type": "string"
+    },
+    "displayNameFromDS": {
+      "description": "This can be used by data sources that return and explicit naming structure for values and labels\nWhen this property is configured, this value is used rather than the default naming strategy.",
+      "type": "string"
+    },
+    "description": {
+      "description": "Human readable field metadata",
+      "type": "string"
+    },
+    "path": {
+      "description": "An explicit path to the field in the datasource.  When the frame meta includes a path,\nThis will default to `${frame.meta.path}/${field.name}\n\nWhen defined, this value can be used as an identifier within the datasource scope, and\nmay be used to update the results",
+      "type": "string"
+    },
+    "writeable": {
+      "description": "True if data source can write a value to the path. Auth/authz are supported separately",
+      "type": "boolean"
+    },
+    "filterable": {
+      "description": "True if data source field supports ad-hoc filters",
+      "type": "boolean"
+    },
+    "unit": {
+      "description": "Unit a field should use. The unit you select is applied to all fields except time.\nYou can use the units ID availables in Grafana or a custom unit.\nAvailable units in Grafana: https://github.com/grafana/grafana/blob/main/packages/grafana-data/src/valueFormats/categories.ts\nAs custom unit, you can use the following formats:\n`suffix:<suffix>` for custom unit that should go after value.\n`prefix:<prefix>` for custom unit that should go before value.\n`time:<format>` For custom date time formats type for example `time:YYYY-MM-DD`.\n`si:<base scale><unit characters>` for custom SI units. For example: `si: mF`. This one is a bit more advanced as you can specify both a unit and the source data scale. So if your source data is represented as milli (thousands of) something prefix the unit with that SI scale character.\n`count:<unit>` for a custom count unit.\n`currency:<unit>` for custom a currency unit.",
+      "type": "string"
+    },
+    "decimals": {
+      "description": "Specify the number of decimals Grafana includes in the rendered value.\nIf you leave this field blank, Grafana automatically truncates the number of decimals based on the value.\nFor example 1.1234 will display as 1.12 and 100.456 will display as 100.\nTo display all decimals, set the unit to `String`.",
+      "type": "number"
+    },
+    "min": {
+      "description": "The minimum value used in percentage threshold calculations. Leave blank for auto calculation based on all series and fields.",
+      "type": "number"
+    },
+    "max": {
+      "description": "The maximum value used in percentage threshold calculations. Leave blank for auto calculation based on all series and fields.",
+      "type": "number"
+    },
+    "mappings": {
+      "description": "Convert input values into a display string",
+      "type": "array",
+      "items": {
+        "$ref": "ValueMapping.json"
+      }
+    },
+    "thresholds": {
+      "$ref": "ThresholdsConfig.json"
+    },
+    "color": {
+      "$ref": "FieldColor.json"
+    },
+    "links": {
+      "description": "The behavior when clicking on a result",
+      "type": "array",
+      "items": {}
+    },
+    "noValue": {
+      "description": "Alternative to empty string",
+      "type": "string"
+    },
+    "custom": {
+      "description": "custom is specified by the FieldConfig field\nin panel plugin schemas.",
+      "type": "object"
+    }
+  },
+  "title": "FieldConfig",
+  "$id": "FieldConfig.json"
+}

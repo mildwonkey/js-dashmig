@@ -1,0 +1,72 @@
+{
+  "description": "A dashboard snapshot shares an interactive dashboard publicly.\nIt is a read-only version of a dashboard, and is not editable.\nIt is possible to create a snapshot of a snapshot.\nGrafana strips away all sensitive information from the dashboard.\nSensitive information stripped: queries (metric, template,annotation) and panel links.",
+  "type": "object",
+  "required": [
+    "created",
+    "expires",
+    "external",
+    "externalUrl",
+    "id",
+    "key",
+    "name",
+    "orgId",
+    "updated",
+    "userId"
+  ],
+  "properties": {
+    "created": {
+      "description": "Time when the snapshot was created",
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires": {
+      "description": "Time when the snapshot expires, default is never to expire",
+      "type": "string"
+    },
+    "external": {
+      "description": "Is the snapshot saved in an external grafana instance",
+      "type": "boolean"
+    },
+    "externalUrl": {
+      "description": "external url, if snapshot was shared in external grafana instance",
+      "type": "string"
+    },
+    "id": {
+      "description": "Unique identifier of the snapshot",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "key": {
+      "description": "Optional, defined the unique key of the snapshot, required if external is true",
+      "type": "string"
+    },
+    "name": {
+      "description": "Optional, name of the snapshot",
+      "type": "string"
+    },
+    "orgId": {
+      "description": "org id of the snapshot",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "updated": {
+      "description": "last time when the snapshot was updated",
+      "type": "string",
+      "format": "date-time"
+    },
+    "url": {
+      "description": "url of the snapshot, if snapshot was shared internally",
+      "type": "string"
+    },
+    "userId": {
+      "description": "user id of the snapshot creator",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    }
+  },
+  "title": "Snapshot",
+  "$id": "Snapshot.json"
+}

@@ -1,0 +1,20 @@
+{
+  "description": "Allow to transform the visual representation of specific data values in a visualization, irrespective of their original units",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "ValueMap.json"
+    },
+    {
+      "$ref": "RangeMap.json"
+    },
+    {
+      "$ref": "RegexMap.json"
+    },
+    {
+      "$ref": "SpecialValueMap.json"
+    }
+  ],
+  "title": "ValueMapping",
+  "$id": "ValueMapping.json"
+}

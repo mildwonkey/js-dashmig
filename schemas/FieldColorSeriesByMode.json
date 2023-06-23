@@ -1,0 +1,11 @@
+{
+  "description": "Defines how to assign a series color from \"by value\" color schemes. For example for an aggregated data points like a timeseries, the color can be assigned by the min, max or last value.",
+  "type": "string",
+  "enum": [
+    "min",
+    "max",
+    "last"
+  ],
+  "title": "FieldColorSeriesByMode",
+  "$id": "FieldColorSeriesByMode.json"
+}

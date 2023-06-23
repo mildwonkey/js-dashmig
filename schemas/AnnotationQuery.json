@@ -1,0 +1,45 @@
+{
+  "description": "TODO docs\nFROM: AnnotationQuery in grafana-data/src/types/annotations.ts",
+  "type": "object",
+  "required": [
+    "name",
+    "datasource",
+    "enable",
+    "iconColor"
+  ],
+  "properties": {
+    "name": {
+      "description": "Name of annotation.",
+      "type": "string"
+    },
+    "datasource": {
+      "$ref": "DataSourceRef.json"
+    },
+    "enable": {
+      "description": "When enabled the annotation query is issued with every dashboard refresh",
+      "type": "boolean",
+      "default": true
+    },
+    "hide": {
+      "description": "Annotation queries can be toggled on or off at the top of the dashboard.\nWhen hide is true, the toggle is not shown in the dashboard.",
+      "type": "boolean",
+      "default": false
+    },
+    "iconColor": {
+      "description": "Color to use for the annotation event markers",
+      "type": "string"
+    },
+    "filter": {
+      "$ref": "AnnotationPanelFilter.json"
+    },
+    "target": {
+      "$ref": "AnnotationTarget.json"
+    },
+    "type": {
+      "description": "TODO -- this should not exist here, it is based on the --grafana-- datasource",
+      "type": "string"
+    }
+  },
+  "title": "AnnotationQuery",
+  "$id": "AnnotationQuery.json"
+}

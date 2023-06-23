@@ -1,0 +1,14 @@
+{
+  "description": "Special value types supported by the `SpecialValueMap`",
+  "type": "string",
+  "enum": [
+    "true",
+    "false",
+    "null",
+    "nan",
+    "null+nan",
+    "empty"
+  ],
+  "title": "SpecialValueMatch",
+  "$id": "SpecialValueMatch.json"
+}

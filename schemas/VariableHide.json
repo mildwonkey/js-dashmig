@@ -1,0 +1,11 @@
+{
+  "description": "Determine if the variable shows on dashboard\nAccepted values are 0 (show label and value), 1 (show value only), 2 (show nothing).",
+  "type": "integer",
+  "enum": [
+    0,
+    1,
+    2
+  ],
+  "title": "VariableHide",
+  "$id": "VariableHide.json"
+}

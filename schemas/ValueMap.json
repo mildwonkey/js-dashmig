@@ -1,0 +1,32 @@
+{
+  "description": "Maps text values to a color or different display text and color.\nFor example, you can configure a value mapping so that all instances of the value 10 appear as Perfection! rather than the number.",
+  "type": "object",
+  "required": [
+    "type",
+    "options"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "allOf": [
+        {
+          "$ref": "MappingType.json"
+        },
+        {
+          "enum": [
+            "value"
+          ]
+        }
+      ]
+    },
+    "options": {
+      "description": "Map with <value_to_match>: ValueMappingResult. For example: { \"10\": { text: \"Perfection!\", color: \"green\" } }",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "ValueMappingResult.json"
+      }
+    }
+  },
+  "title": "ValueMap",
+  "$id": "ValueMap.json"
+}

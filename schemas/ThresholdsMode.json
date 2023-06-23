@@ -1,0 +1,10 @@
+{
+  "description": "Thresholds can either be `absolute` (specific number) or `percentage` (relative to min or max, it will be values between 0 and 1).",
+  "type": "string",
+  "enum": [
+    "absolute",
+    "percentage"
+  ],
+  "title": "ThresholdsMode",
+  "$id": "ThresholdsMode.json"
+}

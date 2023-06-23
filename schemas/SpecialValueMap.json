@@ -1,0 +1,40 @@
+{
+  "description": "Maps special values like Null, NaN (not a number), and boolean values like true and false to a display text and color.\nSee SpecialValueMatch to see the list of special values.\nFor example, you can configure a special value mapping so that null values appear as N/A.",
+  "type": "object",
+  "required": [
+    "type",
+    "options"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "allOf": [
+        {
+          "$ref": "MappingType.json"
+        },
+        {
+          "enum": [
+            "special"
+          ]
+        }
+      ]
+    },
+    "options": {
+      "type": "object",
+      "required": [
+        "match",
+        "result"
+      ],
+      "properties": {
+        "match": {
+          "$ref": "SpecialValueMatch.json"
+        },
+        "result": {
+          "$ref": "ValueMappingResult.json"
+        }
+      }
+    }
+  },
+  "title": "SpecialValueMap",
+  "$id": "SpecialValueMap.json"
+}

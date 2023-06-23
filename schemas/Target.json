@@ -1,0 +1,6 @@
+{
+  "description": "Schema for panel targets is specified by datasource\nplugins. We use a placeholder definition, which the Go\nschema loader either left open/as-is with the Base\nvariant of the Dashboard and Panel families, or filled\nwith types derived from plugins in the Instance variant.\nWhen working directly from CUE, importers can extend this\ntype directly to achieve the same effect.",
+  "type": "object",
+  "title": "Target",
+  "$id": "Target.json"
+}

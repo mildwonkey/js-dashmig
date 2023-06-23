@@ -1,0 +1,53 @@
+{
+  "description": "Maps numerical ranges to a display text and color.\nFor example, if a value is within a certain range, you can configure a range value mapping to display Low or High rather than the number.",
+  "type": "object",
+  "required": [
+    "type",
+    "options"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "allOf": [
+        {
+          "$ref": "MappingType.json"
+        },
+        {
+          "enum": [
+            "range"
+          ]
+        }
+      ]
+    },
+    "options": {
+      "description": "Range to match against and the result to apply when the value is within the range",
+      "type": "object",
+      "required": [
+        "from",
+        "to",
+        "result"
+      ],
+      "properties": {
+        "from": {
+          "description": "Min value of the range. It can be null which means -Infinity",
+          "type": "number",
+          "format": "double",
+          "minimum": -1.7976931348623157e+308,
+          "maximum": 1.7976931348623157e+308
+        },
+        "to": {
+          "description": "Max value of the range. It can be null which means +Infinity",
+          "type": "number",
+          "format": "double",
+          "minimum": -1.7976931348623157e+308,
+          "maximum": 1.7976931348623157e+308
+        },
+        "result": {
+          "$ref": "ValueMappingResult.json"
+        }
+      }
+    }
+  },
+  "title": "RangeMap",
+  "$id": "RangeMap.json"
+}

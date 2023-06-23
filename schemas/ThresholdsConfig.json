@@ -1,0 +1,22 @@
+{
+  "description": "Thresholds configuration for the panel",
+  "type": "object",
+  "required": [
+    "mode",
+    "steps"
+  ],
+  "properties": {
+    "mode": {
+      "$ref": "ThresholdsMode.json"
+    },
+    "steps": {
+      "description": "Must be sorted by 'value', first value is always -Infinity",
+      "type": "array",
+      "items": {
+        "$ref": "Threshold.json"
+      }
+    }
+  },
+  "title": "ThresholdsConfig",
+  "$id": "ThresholdsConfig.json"
+}

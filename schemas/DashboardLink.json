@@ -1,0 +1,66 @@
+{
+  "description": "Links with references to other dashboards or external resources",
+  "type": "object",
+  "required": [
+    "title",
+    "type",
+    "icon",
+    "tooltip",
+    "url",
+    "tags",
+    "asDropdown",
+    "targetBlank",
+    "includeVars",
+    "keepTime"
+  ],
+  "properties": {
+    "title": {
+      "description": "Title to display with the link",
+      "type": "string"
+    },
+    "type": {
+      "$ref": "DashboardLinkType.json"
+    },
+    "icon": {
+      "description": "Icon name to be displayed with the link",
+      "type": "string"
+    },
+    "tooltip": {
+      "description": "Tooltip to display when the user hovers their mouse over it",
+      "type": "string"
+    },
+    "url": {
+      "description": "Link URL. Only required/valid if the type is link",
+      "type": "string"
+    },
+    "tags": {
+      "description": "List of tags to limit the linked dashboards. If empty, all dashboards will be displayed. Only valid if the type is dashboards",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "asDropdown": {
+      "description": "If true, all dashboards links will be displayed in a dropdown. If false, all dashboards links will be displayed side by side. Only valid if the type is dashboards",
+      "type": "boolean",
+      "default": false
+    },
+    "targetBlank": {
+      "description": "If true, the link will be opened in a new tab",
+      "type": "boolean",
+      "default": false
+    },
+    "includeVars": {
+      "description": "If true, includes current template variables values in the link as query params",
+      "type": "boolean",
+      "default": false
+    },
+    "keepTime": {
+      "description": "If true, includes current time range in the link as query params",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "title": "DashboardLink",
+  "$id": "DashboardLink.json"
+}

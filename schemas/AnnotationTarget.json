@@ -1,0 +1,36 @@
+{
+  "description": "TODO: this should be a regular DataQuery that depends on the selected dashboard\nthese match the properties of the \"grafana\" datasouce that is default in most dashboards",
+  "type": "object",
+  "required": [
+    "limit",
+    "matchAny",
+    "tags",
+    "type"
+  ],
+  "properties": {
+    "limit": {
+      "description": "Only required/valid for the grafana datasource...\nbut code+tests is already depending on it so hard to change",
+      "type": "integer",
+      "format": "int64",
+      "minimum": -9223372036854776000,
+      "maximum": 9223372036854776000
+    },
+    "matchAny": {
+      "description": "Only required/valid for the grafana datasource...\nbut code+tests is already depending on it so hard to change",
+      "type": "boolean"
+    },
+    "tags": {
+      "description": "Only required/valid for the grafana datasource...\nbut code+tests is already depending on it so hard to change",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "type": {
+      "description": "Only required/valid for the grafana datasource...\nbut code+tests is already depending on it so hard to change",
+      "type": "string"
+    }
+  },
+  "title": "AnnotationTarget",
+  "$id": "AnnotationTarget.json"
+}

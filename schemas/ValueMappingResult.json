@@ -1,0 +1,27 @@
+{
+  "description": "Result used as replacement with text and color when the value matches",
+  "type": "object",
+  "properties": {
+    "text": {
+      "description": "Text to display when the value matches",
+      "type": "string"
+    },
+    "color": {
+      "description": "Text to use when the value matches",
+      "type": "string"
+    },
+    "icon": {
+      "description": "Icon to display when the value matches. Only specific visualizations.",
+      "type": "string"
+    },
+    "index": {
+      "description": "Position in the mapping array. Only used internally.",
+      "type": "integer",
+      "format": "int32",
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    }
+  },
+  "title": "ValueMappingResult",
+  "$id": "ValueMappingResult.json"
+}

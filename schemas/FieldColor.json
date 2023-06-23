@@ -1,0 +1,21 @@
+{
+  "description": "Map a field to a color.",
+  "type": "object",
+  "required": [
+    "mode"
+  ],
+  "properties": {
+    "mode": {
+      "$ref": "FieldColorModeId.json"
+    },
+    "fixedColor": {
+      "description": "The fixed color value for fixed or shades color modes.",
+      "type": "string"
+    },
+    "seriesBy": {
+      "$ref": "FieldColorSeriesByMode.json"
+    }
+  },
+  "title": "FieldColor",
+  "$id": "FieldColor.json"
+}

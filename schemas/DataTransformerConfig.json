@@ -1,0 +1,26 @@
+{
+  "description": "Transformations allow to manipulate data returned by a query before the system applies a visualization.\nUsing transformations you can: rename fields, join time series data, perform mathematical operations across queries,\nuse the output of one transformation as the input to another transformation, etc.",
+  "type": "object",
+  "required": [
+    "id",
+    "options"
+  ],
+  "properties": {
+    "id": {
+      "description": "Unique identifier of transformer",
+      "type": "string"
+    },
+    "disabled": {
+      "description": "Disabled transformations are skipped",
+      "type": "boolean"
+    },
+    "filter": {
+      "$ref": "MatcherConfig.json"
+    },
+    "options": {
+      "description": "Options to be passed to the transformer\nValid options depend on the transformer id"
+    }
+  },
+  "title": "DataTransformerConfig",
+  "$id": "DataTransformerConfig.json"
+}

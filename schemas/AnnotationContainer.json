@@ -1,0 +1,15 @@
+{
+  "description": "Contains the list of annotations that are associated with the dashboard.\nAnnotations are used to overlay event markers and overlay event tags on graphs.\nGrafana comes with a native annotation store and the ability to add annotation events directly from the graph panel or via the HTTP API.\nSee https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/annotate-visualizations/",
+  "type": "object",
+  "properties": {
+    "list": {
+      "description": "List of annotations",
+      "type": "array",
+      "items": {
+        "$ref": "AnnotationQuery.json"
+      }
+    }
+  },
+  "title": "AnnotationContainer",
+  "$id": "AnnotationContainer.json"
+}

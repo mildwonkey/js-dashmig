@@ -1,0 +1,11 @@
+{
+  "description": "Options to config when to refresh a variable\n`0`: Never refresh the variable\n`1`: Queries the data source every time the dashboard loads.\n`2`: Queries the data source when the dashboard time range changes.",
+  "type": "integer",
+  "enum": [
+    0,
+    1,
+    2
+  ],
+  "title": "VariableRefresh",
+  "$id": "VariableRefresh.json"
+}

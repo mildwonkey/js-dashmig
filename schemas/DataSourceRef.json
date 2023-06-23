@@ -1,0 +1,16 @@
+{
+  "description": "Ref to a DataSource instance",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "The plugin type-id",
+      "type": "string"
+    },
+    "uid": {
+      "description": "Specific datasource instance",
+      "type": "string"
+    }
+  },
+  "title": "DataSourceRef",
+  "$id": "DataSourceRef.json"
+}

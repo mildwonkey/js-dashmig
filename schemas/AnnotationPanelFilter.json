@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "required": [
+    "ids"
+  ],
+  "properties": {
+    "exclude": {
+      "description": "Should the specified panels be included or excluded",
+      "type": "boolean",
+      "default": false
+    },
+    "ids": {
+      "description": "Panel IDs that should be included or excluded",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 255
+      }
+    }
+  },
+  "title": "AnnotationPanelFilter",
+  "$id": "AnnotationPanelFilter.json"
+}

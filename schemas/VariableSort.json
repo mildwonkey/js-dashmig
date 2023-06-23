@@ -1,0 +1,15 @@
+{
+  "description": "Sort variable options\nAccepted values are:\n`0`: No sorting\n`1`: Alphabetical ASC\n`2`: Alphabetical DESC\n`3`: Numerical ASC\n`4`: Numerical DESC\n`5`: Alphabetical Case Insensitive ASC\n`6`: Alphabetical Case Insensitive DESC",
+  "type": "integer",
+  "enum": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "title": "VariableSort",
+  "$id": "VariableSort.json"
+}

@@ -1,0 +1,79 @@
+{
+  "description": "A variable is a placeholder for a value. You can use variables in metric queries and in panel titles.",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "name",
+    "hide",
+    "skipUrlSync"
+  ],
+  "properties": {
+    "id": {
+      "description": "Unique numeric identifier for the variable.",
+      "type": "string",
+      "default": "00000000-0000-0000-0000-000000000000"
+    },
+    "type": {
+      "$ref": "VariableType.json"
+    },
+    "name": {
+      "description": "Name of variable",
+      "type": "string"
+    },
+    "label": {
+      "description": "Optional display name",
+      "type": "string"
+    },
+    "hide": {
+      "$ref": "VariableHide.json"
+    },
+    "skipUrlSync": {
+      "description": "Whether the variable value should be managed by URL query params or not",
+      "type": "boolean",
+      "default": false
+    },
+    "description": {
+      "description": "Description of variable. It can be defined but `null`.",
+      "type": "string"
+    },
+    "query": {
+      "description": "Query used to fetch values for a variable",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "datasource": {
+      "$ref": "DataSourceRef.json"
+    },
+    "allFormat": {
+      "description": "Format to use while fetching all values from data source, eg: wildcard, glob, regex, pipe, etc.",
+      "type": "string"
+    },
+    "current": {
+      "$ref": "VariableOption.json"
+    },
+    "multi": {
+      "description": "Whether multiple values can be selected or not from variable value list",
+      "type": "boolean",
+      "default": false
+    },
+    "options": {
+      "description": "Options that can be selected for a variable.",
+      "type": "array",
+      "items": {
+        "$ref": "VariableOption.json"
+      }
+    },
+    "refresh": {
+      "$ref": "VariableRefresh.json"
+    }
+  },
+  "title": "VariableModel",
+  "$id": "VariableModel.json"
+}

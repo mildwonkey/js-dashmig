@@ -1,0 +1,13 @@
+{
+  "description": "Loading status\nAccepted values are `NotStarted` (the request is not started), `Loading` (waiting for response), `Streaming` (pulling continuous data), `Done` (response received successfully) or `Error` (failed request).",
+  "type": "string",
+  "enum": [
+    "NotStarted",
+    "Loading",
+    "Streaming",
+    "Done",
+    "Error"
+  ],
+  "title": "LoadingState",
+  "$id": "LoadingState.json"
+}

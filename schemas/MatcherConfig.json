@@ -1,0 +1,19 @@
+{
+  "description": "Matcher is a predicate configuration. Based on the config a set of field(s) or values is filtered in order to apply override / transformation.\nIt comes with in id ( to resolve implementation from registry) and a configuration that’s specific to a particular matcher type.",
+  "type": "object",
+  "required": [
+    "id"
+  ],
+  "properties": {
+    "id": {
+      "description": "The matcher id. This is used to find the matcher implementation from registry.",
+      "type": "string",
+      "default": ""
+    },
+    "options": {
+      "description": "The matcher options. This is specific to the matcher implementation."
+    }
+  },
+  "title": "MatcherConfig",
+  "$id": "MatcherConfig.json"
+}

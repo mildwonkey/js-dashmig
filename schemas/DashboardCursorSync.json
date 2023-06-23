@@ -1,0 +1,12 @@
+{
+  "description": "0 for no shared crosshair or tooltip (default).\n1 for shared crosshair.\n2 for shared crosshair AND shared tooltip.",
+  "type": "integer",
+  "enum": [
+    0,
+    1,
+    2
+  ],
+  "default": 0,
+  "title": "DashboardCursorSync",
+  "$id": "DashboardCursorSync.json"
+}

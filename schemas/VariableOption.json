@@ -1,0 +1,44 @@
+{
+  "description": "Option to be selected in a variable.",
+  "type": "object",
+  "required": [
+    "text",
+    "value"
+  ],
+  "properties": {
+    "selected": {
+      "description": "Whether the option is selected or not",
+      "type": "boolean"
+    },
+    "text": {
+      "description": "Text to be displayed for the option",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "value": {
+      "description": "Value of the option",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  },
+  "title": "VariableOption",
+  "$id": "VariableOption.json"
+}

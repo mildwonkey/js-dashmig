@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": [
+    "id"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "value": {}
+  },
+  "title": "DynamicConfigValue",
+  "$id": "DynamicConfigValue.json"
+}

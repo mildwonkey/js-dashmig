@@ -1,0 +1,49 @@
+{
+  "description": "Position and dimensions of a panel in the grid",
+  "type": "object",
+  "required": [
+    "h",
+    "w",
+    "x",
+    "y"
+  ],
+  "properties": {
+    "h": {
+      "description": "Panel height. The height is the number of rows from the top edge of the panel.",
+      "type": "integer",
+      "minimum": 0,
+      "exclusiveMinimum": true,
+      "maximum": 4294967295,
+      "default": 9
+    },
+    "w": {
+      "description": "Panel width. The width is the number of columns from the left edge of the panel.",
+      "type": "integer",
+      "minimum": 0,
+      "exclusiveMinimum": true,
+      "maximum": 24,
+      "default": 12
+    },
+    "x": {
+      "description": "Panel x. The x coordinate is the number of columns from the left edge of the grid",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 24,
+      "exclusiveMaximum": true,
+      "default": 0
+    },
+    "y": {
+      "description": "Panel y. The y coordinate is the number of rows from the top edge of the grid",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295,
+      "default": 0
+    },
+    "static": {
+      "description": "Whether the panel is fixed within the grid. If true, the panel will not be affected by other panels' interactions",
+      "type": "boolean"
+    }
+  },
+  "title": "GridPos",
+  "$id": "GridPos.json"
+}

@@ -1,0 +1,20 @@
+{
+  "description": "A library panel is a reusable panel that you can use in any dashboard.\nWhen you make a change to a library panel, that change propagates to all instances of where the panel is used.\nLibrary panels streamline reuse of panels across multiple dashboards.",
+  "type": "object",
+  "required": [
+    "name",
+    "uid"
+  ],
+  "properties": {
+    "name": {
+      "description": "Library panel name",
+      "type": "string"
+    },
+    "uid": {
+      "description": "Library panel uid",
+      "type": "string"
+    }
+  },
+  "title": "LibraryPanelRef",
+  "$id": "LibraryPanelRef.json"
+}

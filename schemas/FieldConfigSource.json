@@ -1,0 +1,37 @@
+{
+  "description": "The data model used in Grafana, namely the data frame, is a columnar-oriented table structure that unifies both time series and table query results.\nEach column within this structure is called a field. A field can represent a single time series or table column.\nField options allow you to change how the data is displayed in your visualizations.",
+  "type": "object",
+  "required": [
+    "defaults",
+    "overrides"
+  ],
+  "properties": {
+    "defaults": {
+      "$ref": "FieldConfig.json"
+    },
+    "overrides": {
+      "description": "Overrides are the options applied to specific fields overriding the defaults.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "matcher",
+          "properties"
+        ],
+        "properties": {
+          "matcher": {
+            "$ref": "MatcherConfig.json"
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "DynamicConfigValue.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "title": "FieldConfigSource",
+  "$id": "FieldConfigSource.json"
+}
