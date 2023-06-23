@@ -8,8 +8,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mildwonkey/js-dashmig/internal/kinds/dashboard"
 	"github.com/spf13/cobra"
+
+	"github.com/mildwonkey/js-dashmig/internal/kinds/dashboard"
+	"github.com/mildwonkey/js-dashmig/internal/legacydash"
 )
 
 // schematizeCmd represents the schematize command
@@ -86,8 +88,8 @@ func readDash(src []byte) (*dashboard.DashboardJson, error) {
 	// 	return legacydash.ReadDashv36(src)
 	// case 37:
 	// 	return legacydash.ReadDashv37(src)
-	// case 38:
-	// 	return legacydash.ReadDashv38(src)
+	case 38:
+		return legacydash.ReadDashv38(src)
 	default:
 		return nil, fmt.Errorf("unsupported legacy schema version %d", legacyVersion)
 	}
