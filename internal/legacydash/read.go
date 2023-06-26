@@ -8,9 +8,11 @@ import (
 	"github.com/mildwonkey/js-dashmig/internal/kinds/dashboard"
 )
 
+var (
+	datasource string = "datasource"
+)
+
 func ReadDashv38(src []byte) (*dashboard.DashboardJson, error) {
-	// since this is a hack, we'll start by pretending it's fine already
-	// it's not, of course, but we'll get there
 	orig, err := sjson.NewJson(src)
 	if err != nil {
 		return nil, fmt.Errorf("error from simplejson: %s", err)
@@ -45,23 +47,30 @@ func ReadDashv38(src []byte) (*dashboard.DashboardJson, error) {
 			ret := dashboard.AnnotationTargetJson{}
 
 			// the cue file indicates that this isn't actually required so please don't nitpick :D
-			limit, err := target.Get("target").Get("limit").Int()
+			limit, err := target.Get("limit").Int()
 			if err != nil {
 				limit = 1
 			} else {
 				ret.Limit = limit
 			}
-			matchany, err := target.Get("target").Get("matchAny").Bool()
+			matchany, err := target.Get("matchAny").Bool()
 			if err != nil {
 				matchany = false
 			} else {
 				ret.MatchAny = matchany
 			}
 			queryjson[i].Target = &ret
-		}
 
+			if ds, err := a.Get("datasource").String(); err != nil {
+				queryjson[i].Datasource = dashboard.DataSourceRefJson{
+					Type: &datasource,
+					Uid:  &ds,
+				}
+			}
+		}
 		// etc, etc, etc
 	}
+
 	dash.Annotations = new(dashboard.AnnotationContainerJson)
 	dash.Annotations.List = queryjson
 

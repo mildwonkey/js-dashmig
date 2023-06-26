@@ -38,3 +38,8 @@ Look at with https://github.com/santhosh-tekuri/jsonschema
 ## stretch goals!
 - [] json schema store webservice dealie 
 - [] individual plugin serving schema over gRPC 
+
+### Appendix
+
+Cue -> openAPI -> json weirdnesses
+* DashboardCursorSync enum should have been 0, 1, 2 but ended up w/ 0.0, 0.1 etc in  `enumValues_DashboardCursorSyncJson` (fixed manually for now)

@@ -379,9 +379,9 @@ const VariableTypeJsonSystem VariableTypeJson = "system"
 const VariableTypeJsonTextbox VariableTypeJson = "textbox"
 
 var enumValues_DashboardCursorSyncJson = []interface{}{
-	0.0,
-	1.0,
-	2.0,
+	0,
+	1,
+	2,
 }
 
 // UnmarshalJSON implements json.Unmarshaler.

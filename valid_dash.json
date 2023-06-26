@@ -1,0 +1,16 @@
+{
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "panels": [],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [
+    "gdev",
+    "elasticsearch",
+    "datasource-test"
+  ],
+  "timezone": "",
+  "weekStart": ""
+}
