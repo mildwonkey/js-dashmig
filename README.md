@@ -21,8 +21,9 @@ I started with a fun and hacky cue -> openAPI -> jsonschema transformation (open
 1. jsonschema spec: `openapi-transformer-toolkit oas2json -i  dashboard_kind.openapi -o ./schemas`
 1. gotypes: `gojsonschema -p dashboard schemas/Dashboard.json -o internal/kinds/dashboard.go` 
 
-## Doin' Stuff
+I am struggling with gojsonschema the library - the most basic usage isn't working for me, and the codebase hasn't been touched in years, so I switched to "github.com/santhosh-tekuri/jsonschema" (that had been my first choice for a library; `gojsonschema` was what i used to generate the go types)
 
+## Doin' Stuff
   - [x] read a json file & validate against jsonschema
     - the go types generated w/`gojsonschema` include custom unmarshallers
     - one possible migration plan is to extend those unmarshallers to support older formats
@@ -31,9 +32,11 @@ I started with a fun and hacky cue -> openAPI -> jsonschema transformation (open
   - [] meta schemas: panel cfg & options
 
 ### Validation:
-Look at with https://github.com/santhosh-tekuri/jsonschema
-- validates schemas against meta-schema
-- full support of remote references
+Using https://github.com/santhosh-tekuri/jsonschema
+- [x] validate against local schema
+- [x] validate schemas against meta-schema (draft/2020-12)
+- [] validate schemas against meta-schema (core kind)
+- [] validate schemas with remote references (see stretch goals below)
 
 ## stretch goals!
 - [] json schema store webservice dealie 
@@ -41,5 +44,7 @@ Look at with https://github.com/santhosh-tekuri/jsonschema
 
 ### Appendix
 
-Cue -> openAPI -> json weirdnesses
+Generated schema weirdnesses (probably due to Cue -> openAPI -> json weirdnesses)
+
 * DashboardCursorSync enum should have been 0, 1, 2 but ended up w/ 0.0, 0.1 etc in  `enumValues_DashboardCursorSyncJson` (fixed manually for now)
+* exclusiveMinimum and exclusiveMaximum were originally bools in the generated schema, but they should be int.

@@ -26,6 +26,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/santhosh-tekuri/jsonschema/v5"
 	"github.com/spf13/cobra"
 
 	"github.com/mildwonkey/js-dashmig/internal/kinds/dashboard"
@@ -57,15 +58,33 @@ func validate(cmd *cobra.Command, args []string) error {
 	// read the file
 	src, err := os.ReadFile(inputFile)
 	if err != nil {
-		fmt.Printf("opening input file failed: %s", err.Error())
+		fmt.Printf("opening input file failed: %s\n", err.Error())
 		return err
 	}
 
 	d := &dashboard.DashboardJson{}
 	err = json.Unmarshal(src, d)
+	var valid bool
+	valid = true
 	if err != nil {
-		fmt.Printf("dashboard validation failed: %s", err.Error())
+		valid = false
+		fmt.Printf("dashboard validation failed: %s\n", err.Error())
+	}
+	fmt.Println("dashboard validation succeeded, trying a more direct schema route")
+
+	// let's do a version of validate that just checks the json schema.
+	sch, err := jsonschema.Compile("schemas/Dashboard.json")
+	if err != nil {
+		fmt.Printf("schema compilation failed: %s\n", err.Error())
 		return err
 	}
+
+	var v interface{}
+	json.Unmarshal(src, &v)
+	if err = sch.Validate(v); err != nil {
+		fmt.Printf("validation failed (expected? %v): %s\n", !valid, err.Error())
+		return err
+	}
+	fmt.Printf("validation succeeded (expected? %v)\n", valid)
 	return nil
 }

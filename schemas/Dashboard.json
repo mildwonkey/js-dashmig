@@ -1,5 +1,8 @@
 {
   "type": "object",
+  "title": "Dashboard",
+  "$id": "Dashboard.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "required": [
     "style",
     "editable",
@@ -153,8 +156,7 @@
       "description": "The month that the fiscal year starts on.  0 = January, 11 = December",
       "type": "integer",
       "minimum": 0,
-      "maximum": 12,
-      "exclusiveMaximum": true,
+      "exclusiveMaximum": 12,
       "default": 0
     },
     "liveNow": {
@@ -238,7 +240,5 @@
     "snapshot": {
       "$ref": "Snapshot.json"
     }
-  },
-  "title": "Dashboard",
-  "$id": "Dashboard.json"
+  }
 }

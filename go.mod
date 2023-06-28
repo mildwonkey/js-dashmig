@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/bitly/go-simplejson v0.5.1
+	github.com/santhosh-tekuri/jsonschema/v5 v5.3.0
 	github.com/spf13/cobra v1.7.0
 )
 
